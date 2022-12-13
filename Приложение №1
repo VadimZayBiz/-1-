@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+namespace Задание_1__Windows_Forms_к_приложению__1_
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            double a, b, c, d, sum, sum1;
+            try
+            {
+                a = Convert.ToDouble(textBox1.Text);
+                b = Convert.ToDouble(textBox4.Text);
+                c = Convert.ToDouble(textBox3.Text);
+                d = Convert.ToDouble(textBox2.Text);
+
+                sum = Math.Sqrt(Math.Pow(c - a, 2) + Math.Pow(d - b, 2));
+
+                richTextBox1.Text += Environment.NewLine + "Расстояние между точками аb и cd = " + sum;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Вводи только числа!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String[] ss = new String[0];
+            richTextBox1.Lines = ss;
+        }
+    }
+}
+
+
